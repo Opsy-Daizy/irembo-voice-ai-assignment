@@ -1,0 +1,20 @@
+# Local data files
+data/
+
+# DuckDB database files
+*.duckdb
+*.db
+*.sqlite
+
+# VS Code
+.vscode/
+
+# Python cache (if any)
+__pycache__/
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+irembo.db
+irembo.db.wal
