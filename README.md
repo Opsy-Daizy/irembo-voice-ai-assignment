@@ -70,7 +70,7 @@ High-volume intents exhibit elevated error rates:
 - `service_lookup` → 39.0%
 - `unknown` → 38.9%
 
-Friction occurs at foundational journey steps — not edge cases.
+Friction occurs at foundational journey steps, not edge cases.
 
 ---
 
