@@ -1,5 +1,5 @@
 # Local data files
-data/
+Data\
 
 # DuckDB database files
 *.duckdb
@@ -7,7 +7,7 @@ data/
 *.sqlite
 
 # VS Code
-.vscode/
+.vscode\
 
 # Python cache (if any)
 __pycache__/
