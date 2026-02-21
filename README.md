@@ -36,7 +36,7 @@ This enables end-to-end impact evaluation from conversation → application comp
 
 ## 📈 Key Findings
 
-### 1️⃣ Voice Adoption Is Strong — But Completion Lags
+### 1️⃣ Voice Adoption Is Strong, But Completion Lags
 
 | Channel | Completion Rate |
 |----------|----------------|
