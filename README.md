@@ -9,9 +9,9 @@ This project evaluates the performance of a Voice AI system designed to improve 
 
 The analysis focuses on three core objectives:
 
-1. **Accessibility** — Are underserved users succeeding?
-2. **Efficiency** — Where does conversational friction occur?
-3. **Error Reduction** — How do we measure and reduce high-severity degradation by 40%?
+1. **Accessibility** : Are underserved users succeeding?
+2. **Efficiency** : Where does conversational friction occur?
+3. **Error Reduction** : How do we measure and reduce high-severity degradation by 40%?
 
 The analysis is built using DuckDB with a dbt-style layered modeling approach.
 
