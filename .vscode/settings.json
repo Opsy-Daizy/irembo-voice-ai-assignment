@@ -1,0 +1,16 @@
+{
+    "workbench.editorAssociations": {
+        "*.parquet": "duckdb.dataFileViewer",
+        "*.csv": "duckdb.dataFileViewer",
+        "*.tsv": "duckdb.dataFileViewer"
+    },
+    "duckdb.databases": [
+        {
+            "alias": "irembo",
+            "type": "file",
+            "path": "c:\\Git\\irembo-voice-ai-assignment\\irembo.db",
+            "attached": true
+        }
+    ],
+    "duckdb.defaultDatabase": "irembo"
+}

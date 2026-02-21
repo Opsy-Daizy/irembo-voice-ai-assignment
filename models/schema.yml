@@ -1,0 +1,111 @@
+version: 2
+
+models:
+  - name: fact_voice_ai_sessions
+    description: >
+      Analysis-ready fact table at voice-session grain. Combines:
+      - voice session attributes
+      - user segmentation attributes (region, disability, first-time digital)
+      - AI performance metrics (ASR/intent confidence, misunderstanding/silence rates, escalation)
+      - turn-derived metrics (turn counts, turn-level error rate)
+      - linked service application outcomes (where session_id maps to applications)
+
+    columns:
+      - name: session_id
+        description: Unique identifier for a voice session (call/journey).
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: Anonymized user identifier.
+        tests:
+          - not_null
+
+      - name: session_start_ts
+        description: Session start timestamp derived from session_created_at.
+        tests:
+          - not_null
+
+      - name: session_end_ts
+        description: Session end timestamp derived from start + total_duration_sec.
+
+      - name: session_duration_seconds
+        description: Total duration of the session in seconds.
+        tests:
+          - not_null
+
+      - name: session_channel
+        description: Channel for session interactions (expected: voice).
+
+      - name: language
+        description: Session language (expected primary: Kinyarwanda).
+
+      - name: final_outcome
+        description: Final session outcome (e.g., completed/abandoned/transferred).
+
+      - name: transfer_reason
+        description: Reason for transfer/escalation where applicable.
+
+      - name: region
+        description: User region or segment (e.g., rural/urban).
+
+      - name: disability_flag
+        description: Indicates whether the user has a disability flag (yes/no).
+
+      - name: first_time_digital_user
+        description: Indicates whether user is a first-time digital user (yes/no).
+
+      - name: avg_asr_confidence
+        description: Average ASR confidence across the session (0–1 expected).
+
+      - name: avg_intent_confidence
+        description: Average intent confidence across the session (0–1 expected).
+
+      - name: misunderstanding_rate
+        description: Rate of misunderstanding events in a session (0–1 expected).
+
+      - name: silence_rate
+        description: Rate of silence events in a session (0–1 expected).
+
+      - name: recovery_success
+        description: Whether the system successfully recovered from failures (0–1 expected).
+
+      - name: escalation_flag
+        description: Whether session was escalated (yes/no).
+
+      - name: turn_count
+        description: Number of turns in the session (from voice_turns where available).
+
+      - name: turn_error_count
+        description: Count of turns with error_type populated.
+
+      - name: turn_error_rate
+        description: Ratio of error turns to total turns.
+
+      - name: application_id
+        description: Linked application identifier where applicable.
+
+      - name: application_channel
+        description: Application channel (voice/web/ussd). Used for voice vs non-voice comparisons.
+
+      - name: application_status
+        description: Application completion outcome (completed/abandoned/failed).
+
+      - name: is_session_completed
+        description: Flag indicating whether session outcome was completed (1/0).
+
+      - name: is_application_created
+        description: Flag indicating whether an application record is linked to the session (1/0).
+
+      - name: is_application_completed
+        description: Flag indicating whether linked application_status is completed (1/0).
+
+      - name: dropoff_flag
+        description: Flag for likely drop-off: abandoned/transferred session with no linked application.
+
+      - name: is_error_session
+        description: >
+          Composite error flag used for Part 4:
+          1 if (any turn error) OR (misunderstanding_rate >= threshold) OR
+          (avg_intent_confidence < threshold) OR (silence_rate >= threshold).
