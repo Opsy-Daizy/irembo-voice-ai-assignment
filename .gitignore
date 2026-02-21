@@ -1,5 +1,5 @@
 # Local data files
-data\
+data/
 
 # DuckDB database files
 *.duckdb
@@ -7,7 +7,7 @@ data\
 *.sqlite
 
 # VS Code
-.vscode\
+.vscode/
 
 # Python cache (if any)
 __pycache__/
@@ -19,4 +19,5 @@ Thumbs.db
 irembo.db
 irembo.db.wal
 *.csv
-settings.json
+settings.jsongit rm -r --cached .vscode
+/.vscode
