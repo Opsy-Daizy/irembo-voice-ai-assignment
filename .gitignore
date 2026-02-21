@@ -1,5 +1,5 @@
 # Local data files
-Data\
+data\
 
 # DuckDB database files
 *.duckdb
@@ -18,3 +18,4 @@ __pycache__/
 Thumbs.db
 irembo.db
 irembo.db.wal
+*.csv
