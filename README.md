@@ -16,6 +16,24 @@ The analysis focuses on three core objectives:
 The analysis is built using DuckDB with a dbt-style layered modeling approach.
 
 ---
+## 🗂 Repository Structure
+
+Data files are excluded from version control.
+
+---
+
+## 🚀 How to Reproduce
+
+1. Place required CSV files into `/data` directory (not committed).  
+2. Open DuckDB in VS Code.  
+3. Run SQL models in order:
+   - sources  
+   - staging  
+   - intermediate  
+   - marts (analysis are also in mart)   
+4. Query `fact_voice_ai_sessions` for KPI analysis.  
+
+---
 
 ##  Data Model Architecture
 
@@ -161,26 +179,6 @@ This enables Product and AI teams to:
 - No transcript exposure  
 - Anonymized user identifiers  
 - Small-cohort suppression  
-
----
-
-## 🗂 Repository Structure
-
-Data files are excluded from version control.
-
----
-
-## 🚀 How to Reproduce
-
-1. Place required CSV files into `/data` directory (not committed).  
-2. Open DuckDB in VS Code.  
-3. Run SQL models in order:
-   - sources  
-   - staging  
-   - intermediate  
-   - marts  
-   - analysis  
-4. Query `fact_voice_ai_sessions` for KPI analysis.  
 
 ---
 
