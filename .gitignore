@@ -19,3 +19,4 @@ Thumbs.db
 irembo.db
 irembo.db.wal
 *.csv
+settings.json
